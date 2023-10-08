@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title><%=title %></title>
+        <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="/css/home.css" >
+    </head>
+    <body>
+        <div  id="outer-div">
+            <h2 class="text-center font-actor">TODO App</h2>
+            <div id="form-div">
+                <form action="/create-task" method="POST">
+                    <div style="width:100%; height: 100px;" class="grid-div">
+                        <label for="description-id" style="padding-left: 20px;">Description</label>
+                        <br/><br/>
+                        <input type="text" id="description-id" name="description_data" style="margin-left: 20px; width:300px" placeholder="what do you need to do ">
+                    </div>
+                    <hr/>
+                    <div class="grid-div text-center">
+                        <label for="category-id">Category</label><br/>
+                        <select name="category_data" id="category-id" class="font-actor date-dropdown" style="width:200px">
+                        <option value="">Choose a Category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    </div>
+                    <div class="grid-div text-center">
+                        <label for="due-date-id">Due Date</label>
+                        <br/>
+                        <input type="date" id="due-date-id" class="date-dropdown" name="date_data"><br/>
+                    </div>
+                    <hr/>
+                    <div class="grid-div text-center" style="height: 110px; display: flex; justify-content: space-around; align-items: center;">
+                    <a href="/create-task"><button class="font-actor btn" style="background-color: gray;">
+                        + ADD TASK
+                    </button>
+                    </a>
+                    <a href="/delete-task/" style="text-decoration: none;" id="delete-btn">
+                    <div class="font-actor btn" style="padding-top: 15px;">
+                        DELETE TASK
+                    </div>
+                    </a>
+                    </div>
+                    <hr/>
+                </form>
+            </div>
+            <div id="tasks-list-container">
+                <ul type="none">
+                    <% for (let i of taskslist_ejs){ %>
+                        <div >
+                            <li style="display:inline-block; margin-bottom: 10px; ">
+                                <div style="display: inline-block;">
+                                    <div class="check_box" data-cbid="<%=i._id%>" style="display: inline-block;">
+                                    <!-- here our custom attribute data-cbid is nothing but checkbox id which we are getting from db
+                                    so that when this check box is clicked we know the value of checkbox so we know what should be
+                                    deleted exactly -->
+                                    </div>
+                                    <div style="display: inline-block; width:500px; padding-left: 10px;">
+                                        <p> <%= i.description%></p>
+                                        <p> <%= i.date %></p>
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100px; padding-top:10px; height:50px;">
+                                    <div style=" height: 40px; padding-top:10px" class="text-center category_class">
+                                        <%= i.category%>
+                                    </div>
+                                </div>
+                            </li>
+                            <hr/>
+                        </div>
+                    <%} %> 
+                </ul>
+                
+            </div>
+        </div>
+        <script type="application/javascript" src="/js/home_tasks.js" ></script>
+    </body>
+</html>

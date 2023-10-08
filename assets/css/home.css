@@ -1,0 +1,84 @@
+*{
+  box-sizing: border-box;  
+}
+
+.text-center{
+    text-align: center;
+}
+
+body{
+    background-color: grey;
+    font-family: 'Actor';
+}
+
+#form-div{
+    position: relative;
+    left:25%;
+    display: grid;
+    width:700px;
+    background-color: whitesmoke;
+    font-family: 'Actor';
+}
+
+.grid-div{
+    width: 350px; 
+    display: inline-block; 
+    margin: 2px -2px;
+    height:80px; 
+    font-family: 'Actor';
+    padding-top:20px;
+}
+
+.font-actor{
+    font-family: 'Actor';
+}
+
+.btn{
+    height:50px;
+    width:140px;
+    font-size: 16px;
+    position: relative;
+    left:170px;
+    padding-top:-10px;
+    background-color:red;
+    color: white;
+}
+
+
+.date-dropdown{
+    height:30px;
+    width:100px;
+}
+
+#description-id{
+    border: none;
+    outline: none;
+    border-bottom: 1px;
+    height:30px;
+    width: 200px;
+}
+
+
+#tasks-list-container{
+    position: relative;
+    left:25%;
+    display: grid;
+    width:700px;
+    height: auto;
+    background-color:whitesmoke;
+    font-family: 'Actor';
+
+}
+
+.check_box{
+    height: 15px;
+    width: 15px;
+    border: 2px solid black;
+    border-radius: 30%;
+    background-image: none;
+}
+
+
+.category_class{
+    background-color: blueviolet;
+}
