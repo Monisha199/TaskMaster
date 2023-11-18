@@ -7,7 +7,7 @@ const app = express();
 app.set('views engine','ejs'); 
 app.set('views','./views'); // setting our views to be fetched from ./views
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:true}));
 app.use(express.static('assets')); // setting where to locate our static files
 
 
